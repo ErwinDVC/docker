@@ -1,0 +1,18 @@
+version: '2'
+services:
+  niptdatabase:
+    image: mariadb:5.5.43
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./data/database/:/var/lib/mysql
+    extends: 
+      file: config.yml
+      service: nipt
+
+  nipt:
+    build: ./nipt/.
+    ports:
+      - "7000:80"
+    depends_on:
+      - niptdatabase
