@@ -2,7 +2,8 @@ version: '2'
 
 services:
   nipt:
-    MYSQL_ROOT_PASSWORD: 'root'
-    MYSQL_DATABASE: 'niptdb'
-    MYSQL_USER: 'nipt'
-    MYSQL_PASSWORD: 'nipt'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'niptdb'
+      MYSQL_USER: 'nipt'
+      MYSQL_PASSWORD: 'nipt'
